@@ -1,5 +1,7 @@
-== README
+README
+======
 Team CRUD
 
-== URLS
+URLS
+====
 Staging: http://floral-violet-stg.herokuapp.com
