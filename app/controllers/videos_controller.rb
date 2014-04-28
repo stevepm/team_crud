@@ -17,5 +17,6 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @youtube_id = @video.url.split(%r{(https?:\/\/youtu.be\/)|(https?:\/\/www.youtube.com\/watch\?v=)}).last
   end
 end
