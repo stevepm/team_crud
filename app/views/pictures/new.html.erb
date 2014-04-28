@@ -1,0 +1,6 @@
+<%= form_for @picture, url: {action: 'create'} do |f| %>
+  <%= f.text_field :url, :id => 'url' %>
+  <%= f.text_area :description, :id => 'description' %>
+  <%= f.text_field :rating, :id => 'rating' %>
+  <%= f.submit 'Add Picture' %>
+<% end %>
