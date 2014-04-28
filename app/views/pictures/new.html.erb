@@ -1,4 +1,11 @@
 <%= form_for @picture, url: {action: 'create'} do |f| %>
+  <% if @picture.errors.any? %>
+    <div class="error">
+      <% @picture.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
   <%= f.text_field :url, :id => 'url' %>
   <%= f.text_area :description, :id => 'description' %>
   <%= f.text_field :rating, :id => 'rating' %>

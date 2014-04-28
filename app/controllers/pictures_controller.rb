@@ -11,6 +11,7 @@ class PicturesController < ApplicationController
     if picture.save
       redirect_to "/pictures/#{picture.id}", notice: "Picture successfully created"
     else
+      @picture = picture
       render :new
     end
   end
