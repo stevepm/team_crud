@@ -1,7 +1,9 @@
-Video successfully created
+<h2>Video successfully created</h2>
 
-<%= @video.url %>
-<%= @video.description %>
-<%= @video.rating %>
+<p><%= @video.url %></p>
+<p><%= @video.description %></p>
+<p><%= @video.rating %></p>
 
-<iframe width="420" height="315" src="//www.youtube.com/embed/<%= @youtube_id %>" frameborder="0" allowfullscreen></iframe>
+<div>
+  <iframe width="420" height="315" src="//www.youtube.com/embed/<%= @youtube_id %>" frameborder="0" allowfullscreen></iframe>
+</div>
