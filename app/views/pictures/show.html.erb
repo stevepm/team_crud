@@ -1,10 +1,11 @@
 <div id="content_container">
   <div class="full_column" id="notice">
-      <% flash.each do |_, msg| -%>
-        <%= msg %>
-      <% end -%>
+    <% flash.each do |_, msg| -%>
+      <%= msg %>
+    <% end -%>
     <div class="resetColumnSet"></div>
-  </div><!--end full_column-->
+  </div>
+  <!--end full_column-->
   <div class="one_third" id="left_side">
     <img src="<%= @picture.url %>" class="thumbnail">
 
@@ -13,7 +14,11 @@
   <div class="one_third" id="right_side">
     <p><a href="<%= @picture.url %>"><%= @picture.url %></a></p>
 
-    <p><%= @picture.description %></p>
+    <p>
+      <% @picture.description.split("\n").each do |line| %>
+        <%= line %><br/>
+      <% end %>
+    </p>
   </div>
   <div class="resetColumnSet"></div>
 </div><!--end content_container-->
