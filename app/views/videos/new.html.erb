@@ -2,13 +2,22 @@
 
 <%= form_for @video do |f| %>
 
-  <%= f.label :url %>
-  <%= f.text_field :url %>
+  <p>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </p>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </p>
 
-  <%= f.label :rating %>
-  <%= f.text_field :rating %>
+  <p>
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+  </p>
 
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>
