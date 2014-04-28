@@ -57,13 +57,13 @@ footer {
 
 #left_side {
     padding-left: 60px;
-    padding-top: 40px;
+    padding-top: 15px;
 }
 
 #right_side {
     float: right;
     padding-right: 100px;
-    padding-top: 40px;
+    padding-top: 15px;
 }
 
 .one_third {
@@ -84,6 +84,11 @@ footer {
 
 .full_column {
 	width:940px;
+}
+
+#notice {
+    padding-left: 60px;
+    padding-top: 40px;
 }
 
 .one_half, .one_third, .two_third, .three_fourth, .one_fourth, .full_column {
