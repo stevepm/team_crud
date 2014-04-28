@@ -1,0 +1,14 @@
+<h1>Add a Video</h1>
+
+<%= form_for @video do |f| %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+
+<% end %>
