@@ -1,0 +1,13 @@
+<div id="notice">
+  <% flash.each do |_, msg| -%>
+    <%= msg %>
+  <% end -%>
+</div>
+<div id="left-side">
+  <img src="<%= @picture.url %>">
+  <p>Rating: <%= @picture.rating %> out of 5</p>
+</div>
+<div id="right-side">
+  <p><a href="<%= @picture.url %>"><%= @picture.url %></a></p>
+  <p><%= @picture.description %></p>
+</div>
