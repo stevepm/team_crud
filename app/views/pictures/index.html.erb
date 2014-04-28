@@ -1,1 +1,4 @@
 <%= link_to('New Picture', action: 'new' ) %>
+<% @pictures.each do |picture| %>
+  <a href="/pictures/<%= picture.id %>" id="show_<%= picture.id %>"><img src="<%= picture.url %>" /></a>
+<% end %>
