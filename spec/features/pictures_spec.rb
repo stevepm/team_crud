@@ -34,9 +34,7 @@ feature 'picture management' do
     expect(page).to have_content('Description cannot be blank')
     page.should have_css("input[value='4']")
 
-    visit '/'
-
-    click_link 'All Pictures'
+    visit '/pictures'
 
     page.should have_css("img[src='http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg']")
     click_link "show_#{test_id}"
