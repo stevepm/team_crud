@@ -1,0 +1,34 @@
+<h1>Edit Video</h1>
+
+<%= form_for @video do |f| %>
+
+  <% if @video.errors.present? %>
+    <div class="errors">
+      <h1>Error(s):</h1>
+      <ul class="error-list">
+        <% @video.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
