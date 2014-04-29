@@ -13,7 +13,6 @@ html, body {
 
 body {
     background-color: lightskyblue;
-
 }
 
 #header_container,
@@ -62,6 +61,42 @@ footer {
 
 .wide textarea {
     height: 100px;
+    margin: auto;
+    width: 960px;
+}
+
+#picture-button {
+    border: 2px solid black;
+    background-color: white;
+    -moz-box-shadow: 3px 3px 0px 0px #000;
+    -webkit-box-shadow: 3px 3px 0px 0px #000;
+    box-shadow: 3px 3px 0px 0px #000;
+}
+
+#picture_form td {
+    width: 150px;
+    padding-top: 10px;
+    float: left;
+}
+
+#picture_form #description {
+    height: 100px;
+}
+
+#picture_form {
+    margin: 60px;
+}
+
+#picture_form #rating {
+    width: 60px;
+}
+
+#picture_form #url, #description {
+    width: 250px;
+}
+
+#picture_form #url, #description, #rating {
+    border: 2px solid black;
 }
 
 /*image styling*/
@@ -88,6 +123,22 @@ footer {
 }
 
 .one_third {
+    width: 300px;
+}
+
+.two_third {
+    width: 620px;
+}
+
+.one_fourth {
+    width: 220px;
+}
+
+.three_fourth {
+    width: 700px;
+}
+
+.full_column {
     width: 300px;
 }
 
