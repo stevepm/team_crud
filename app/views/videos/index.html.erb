@@ -1,4 +1,12 @@
 <h1>Videos</h1>
+
+<div class="full_column" id="notice">
+  <% flash.each do |_, msg| -%>
+    <h3><%= msg %></h3>
+  <% end -%>
+  <div class="resetColumnSet"></div>
+</div>
+
 <a href="/videos/new">New Video</a>
 
 <% @videos.each do |video| %>

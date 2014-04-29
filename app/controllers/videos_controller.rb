@@ -39,4 +39,9 @@ class VideosController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    Video.destroy(params[:id])
+    redirect_to '/videos', notice: "Video successfully deleted"
+  end
 end

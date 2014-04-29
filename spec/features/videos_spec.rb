@@ -110,4 +110,21 @@ feature 'video management' do
     expect(page).to have_content("Description can't be blank")
     expect(page).to_not have_selector 'iframe'
   end
+
+  scenario 'users can delete a video' do
+    visit '/videos'
+
+    click_on 'New Video'
+
+    fill_in 'video_url', :with => 'https://www.youtube.com/watch?v=yTCRwi71_ns'
+    fill_in 'video_description', :with => 'Mitt Romney'
+    fill_in 'video_rating', :with => '3'
+
+    click_on 'Create Video'
+
+    click_button 'Delete Video'
+
+    expect(page).to have_content 'Video successfully deleted'
+    expect(page).to have_no_content('https://www.youtube.com/watch?v=yTCRwi71_ns')
+  end
 end

@@ -11,9 +11,15 @@
 
 
 <div class="one_half">
-  <p><a href=<%= @video.url %>><%= @video.url %></a> <a href="/videos/<%= @video.id %>/edit">(Edit)</a></p>
+  <p>
+    <a href=<%= @video.url %>><%= @video.url %></a> <a href="/videos/<%= @video.id %>/edit">(Edit)</a>
+  </p>
+
   <p>
     <% @video.description.split("\n").each do |line| %>
       <%= line %><br/>
-    <% end %></p>
+    <% end %>
+  </p>
+
+  <%= button_to "Delete Video", video_path(@video), method: :delete, data: {confirm: "Are you sure?"} %>
 </div>
