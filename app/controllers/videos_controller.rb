@@ -13,7 +13,7 @@ class VideosController < ApplicationController
     @video.description = params[:video][:description]
     @video.rating = params[:video][:rating]
     if @video.save
-      redirect_to "/videos/#{@video.id}"
+      redirect_to "/videos/#{@video.id}", notice: "Video successfully created"
     else
       render :new
     end
