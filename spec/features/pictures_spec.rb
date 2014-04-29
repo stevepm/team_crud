@@ -62,6 +62,17 @@ feature 'picture management' do
 
     expect(page).to have_content 'URL must be valid'
 
+    visit '/pictures'
+    click_link 'New Picture'
+
+    fill_in 'url', with: "www.google.com"
+    fill_in 'description', with: "Cats\nThey are neat."
+    fill_in 'rating', with: "4"
+
+    click_button "Create Picture"
+
+    expect(page).to have_content 'URL must be valid'
+
     fill_in 'url', with: "http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg"
     fill_in 'description', with: "Cats\nThey are neat."
     fill_in 'rating', with: "4"
@@ -105,5 +116,35 @@ feature 'picture management' do
     expect(page).to have_content "http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg"
     expect(page).to have_content "Cats\nThey are super neat."
     expect(page).to have_content "Rating: 5 out of 5"
+  end
+
+  scenario 'User can delete a picture' do
+    visit '/pictures'
+
+    click_link 'New Picture'
+
+    fill_in 'url', with: "http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg"
+    fill_in 'description', with: "Cats\nThey are neat."
+    fill_in 'rating', with: "4"
+    click_button "Create Picture"
+
+    click_link 'Delete'
+
+    page.should_not have_css("img[src='http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg']")
+  end
+
+  scenario 'User can view all images on homepage' do
+    visit '/pictures'
+
+    click_link 'New Picture'
+
+    fill_in 'url', with: "http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg"
+    fill_in 'description', with: "Cats\nThey are neat."
+    fill_in 'rating', with: "4"
+    click_button "Create Picture"
+
+    visit '/pictures'
+    page.should have_css("img[src='http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg']")
+
   end
 end
