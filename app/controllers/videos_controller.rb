@@ -13,7 +13,7 @@ class VideosController < ApplicationController
     @video.description = params[:video][:description]
     @video.rating = params[:video][:rating]
     if @video.save
-      redirect_to "/videos/#{@video.id}"
+      redirect_to "/videos/#{@video.id}", notice: "Video successfully created"
     else
       render :new
     end
@@ -38,5 +38,10 @@ class VideosController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    Video.destroy(params[:id])
+    redirect_to '/videos', notice: "Video successfully deleted"
   end
 end

@@ -1,11 +1,25 @@
-<h2>Video successfully created</h2>
-
-<p><%= @video.url %>  <a href="/videos/<%= @video.id %>/edit">(Edit)</a></p>
-<p><% @video.description.split("\n").each do |line| %>
-  <%= line %><br/>
-  <% end %></p>
-<p>Rating: <%= @video.rating %> out of 5</p>
-
-<div>
+<div class="full_column" id="notice">
+  <% flash.each do |_, msg| -%>
+    <h3><%= msg %></h3>
+  <% end -%>
+  <div class="resetColumnSet"></div>
+</div>
+<div class="one_half">
   <iframe width="420" height="315" src="//www.youtube.com/embed/<%= @youtube_id %>" frameborder="0" allowfullscreen></iframe>
+  <p>Rating: <%= @video.rating %> out of 5</p>
+</div>
+
+
+<div class="one_half">
+  <p>
+    <a href=<%= @video.url %>><%= @video.url %></a> <a href="/videos/<%= @video.id %>/edit">(Edit)</a>
+  </p>
+
+  <p>
+    <% @video.description.split("\n").each do |line| %>
+      <%= line %><br/>
+    <% end %>
+  </p>
+
+  <%= button_to "Delete Video", video_path(@video), method: :delete, data: {confirm: "Are you sure?"} %>
 </div>
