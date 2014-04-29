@@ -88,4 +88,26 @@ feature 'video management' do
     expect(page).to have_field('video_rating', with: '2')
     expect(page).to have_button 'Update Video'
   end
+
+  scenario 'users cannot update a video with a blank description' do
+    visit '/videos'
+
+    click_on 'New Video'
+
+    fill_in 'video_url', :with => 'https://www.youtube.com/watch?v=yTCRwi71_ns'
+    fill_in 'video_description', :with => 'Mitt Romney'
+    fill_in 'video_rating', :with => '3'
+
+    click_on 'Create Video'
+
+    click_on 'Edit'
+
+    fill_in 'video_url', :with => 'https://www.youtube.com/watch?v=yTCRwi71_ns'
+    fill_in 'video_description', :with => ''
+    fill_in 'video_rating', :with => '3'
+    click_on 'Update Video'
+
+    expect(page).to have_content("Description can't be blank")
+    expect(page).to_not have_selector 'iframe'
+  end
 end
