@@ -1,0 +1,32 @@
+<div id="picture_form">
+  <h1>Edit a picture</h1>
+
+  <%= form_for @picture, url: {action: 'update'}, id: 'picture-form' do |f| %>
+    <% if @picture.errors.any? %>
+      <div class="error">
+        <% @picture.errors.each do |_, msg| %>
+          <p><%= msg %></p>
+        <% end %>
+      </div>
+    <% end %>
+    <table>
+      <tr>
+        <td><%= f.label :url_of_picture %></td>
+        <td><%= f.text_field :url, :id => 'url' %></td>
+      </tr>
+      <br/>
+      <tr>
+        <td><%= f.label :short_description %></td>
+        <td><%= f.text_area :description, :id => 'description' %></td>
+      </tr>
+      <br/>
+      <tr>
+        <td><%= f.label :rating %></td>
+        <td><%= f.text_field :rating, :id => 'rating' %></td>
+      </tr>
+    </table>
+    <br/>
+    <%= f.submit 'Edit', :id => 'picture-button' %>
+
+  <% end %>
+</div>

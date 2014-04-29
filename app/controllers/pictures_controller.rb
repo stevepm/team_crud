@@ -21,6 +21,21 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
   end
 
+  def edit
+    @picture = Picture.find(params[:id])
+    render :edit
+  end
+
+  def update
+    picture = Picture.find(params[:id])
+    picture.update_attributes(allowed_parameters)
+    if picture.save
+      redirect_to "/pictures/#{picture.id}", notice: "Picture successfully edited"
+    else
+      @picture = picture
+      render :edit
+    end
+  end
   private
 
   def allowed_parameters
