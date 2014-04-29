@@ -7,9 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="content_container">
-  <%= yield %>
-</div>
-
+<header>
+  <div id="header_container">
+    Media Manager
+  </div>
+</header>
+<div id="content_container"><%= yield %></div>
+<footer>
+  <div id="footer_container">Not Copyrighted At All</div>
+</footer>
 </body>
 </html>

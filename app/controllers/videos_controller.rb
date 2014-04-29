@@ -29,6 +29,14 @@ class VideosController < ApplicationController
   end
 
   def update
-    redirect_to '/videos'
+    @video = Video.find(params[:id])
+    @video.url = params[:video][:url]
+    @video.description = params[:video][:description]
+    @video.rating = params[:video][:rating]
+    if @video.save
+      redirect_to "/videos/#{@video.id}"
+    else
+      render :new
+    end
   end
 end

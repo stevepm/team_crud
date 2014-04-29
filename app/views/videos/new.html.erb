@@ -12,23 +12,38 @@
       </ul>
     </div>
   <% end %>
+  <table id="video_form">
+    <tr>
+      <td>
+        <%= f.label :url, text = 'URL of Video' %>
+      </td>
+      <td class="wide">
+        <%= f.text_field :url %>
+      </td>
+    </tr>
 
-  <p>
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </p>
+    <tr>
+      <td>
+        <%= f.label :description, text = 'Short Description' %>
+      </td>
+      <td class="wide">
+        <%= f.text_area :description %>
+      </td>
+    </tr>
 
-  <p>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </p>
+    <tr>
+      <td>
+        <%= f.label :rating %>
+      </td>
+      <td>
+        <%= f.text_field :rating %>
+      </td>
+    </tr>
 
-  <p>
-    <%= f.label :rating %>
-    <%= f.text_field :rating %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
+    <tr>
+      <td>
+        <%= f.submit %>
+      </td>
+    </tr>
+  </table>
 <% end %>
