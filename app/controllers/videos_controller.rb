@@ -23,4 +23,12 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @youtube_id = @video.url.split(%r{(https?:\/\/youtu.be\/)|(https?:\/\/www.youtube.com\/watch\?v=)}).last
   end
+
+  def edit
+    @video = Video.find(params[:id])
+  end
+
+  def update
+    redirect_to '/videos'
+  end
 end
