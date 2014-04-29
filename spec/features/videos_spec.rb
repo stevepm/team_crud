@@ -69,4 +69,45 @@ feature 'video management' do
     expect(page).to have_content 'https://www.youtube.com/watch?v=yTCRwi71_ns'
     expect(page).to have_content 'http://youtu.be/OydqR_7_DjI'
   end
+
+  scenario 'user can edit a video' do
+    visit '/'
+
+    click_on 'All Videos'
+    click_on 'New Video'
+
+    fill_in 'video_url', :with => 'https://www.youtube.com/watch?v=LW863DOXqZQ'
+    fill_in 'video_description', :with => 'Transforming your data with Ruby'
+    fill_in 'video_rating', :with => '2'
+    click_on 'Create Video'
+
+    click_on 'Edit'
+
+    expect(page).to have_field('video_url', with: 'https://www.youtube.com/watch?v=LW863DOXqZQ')
+    expect(page).to have_field('video_description', with: 'Transforming your data with Ruby')
+    expect(page).to have_field('video_rating', with: '2')
+    expect(page).to have_button 'Update Video'
+  end
+
+  scenario 'users cannot update a video with a blank description' do
+    visit '/videos'
+
+    click_on 'New Video'
+
+    fill_in 'video_url', :with => 'https://www.youtube.com/watch?v=yTCRwi71_ns'
+    fill_in 'video_description', :with => 'Mitt Romney'
+    fill_in 'video_rating', :with => '3'
+
+    click_on 'Create Video'
+
+    click_on 'Edit'
+
+    fill_in 'video_url', :with => 'https://www.youtube.com/watch?v=yTCRwi71_ns'
+    fill_in 'video_description', :with => ''
+    fill_in 'video_rating', :with => '3'
+    click_on 'Update Video'
+
+    expect(page).to have_content("Description can't be blank")
+    expect(page).to_not have_selector 'iframe'
+  end
 end
