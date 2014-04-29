@@ -1,8 +1,10 @@
 <h2>Video successfully created</h2>
 
 <p><%= @video.url %>  <a href="/videos/<%= @video.id %>/edit">(Edit)</a></p>
-<p><%= @video.description %></p>
-<p><%= @video.rating %></p>
+<p><% @video.description.split("\n").each do |line| %>
+  <%= line %><br/>
+  <% end %></p>
+<p>Rating: <%= @video.rating %> out of 5</p>
 
 <div>
   <iframe width="420" height="315" src="//www.youtube.com/embed/<%= @youtube_id %>" frameborder="0" allowfullscreen></iframe>
