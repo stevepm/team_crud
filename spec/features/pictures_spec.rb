@@ -62,6 +62,17 @@ feature 'picture management' do
 
     expect(page).to have_content 'URL must be valid'
 
+    visit '/pictures'
+    click_link 'New Picture'
+
+    fill_in 'url', with: "www.google.com"
+    fill_in 'description', with: "Cats\nThey are neat."
+    fill_in 'rating', with: "4"
+
+    click_button "Create Picture"
+
+    expect(page).to have_content 'URL must be valid'
+
     fill_in 'url', with: "http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg"
     fill_in 'description', with: "Cats\nThey are neat."
     fill_in 'rating', with: "4"
