@@ -47,7 +47,7 @@ footer {
 }
 
 #video_form td + td {
-    width: 300px;
+    width: 450px;
 }
 
 #video_form td {
@@ -62,7 +62,6 @@ footer {
 .wide textarea {
     height: 100px;
     margin: auto;
-    width: 960px;
 }
 
 #picture-button {
