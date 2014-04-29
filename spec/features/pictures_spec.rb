@@ -75,4 +75,35 @@ feature 'picture management' do
     page.should have_css("img[src='http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg']")
 
   end
+
+  scenario 'user can edit a picture' do
+    visit '/pictures'
+
+    click_link 'New Picture'
+
+    fill_in 'url', with: "http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg"
+    fill_in 'description', with: "Cats\nThey are neat."
+    fill_in 'rating', with: "4"
+    click_button "Create Picture"
+    click_on "Edit"
+    page.should have_css("input[value='http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg']")
+    expect(page).to have_content "Cats\nThey are neat."
+    page.should have_css("input[value='4']")
+
+    fill_in 'url', with: ""
+    fill_in 'description', with: "Cats\nThey are neat."
+    fill_in 'rating', with: "4"
+    click_button "Edit"
+    expect(page).to have_content('URL cannot be blank')
+
+    fill_in 'url', with: "http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg"
+    fill_in 'description', with: "Cats\nThey are super neat."
+    fill_in 'rating', with: "5"
+    click_button "Edit"
+
+    expect(page).to have_content "Picture successfully edited"
+    expect(page).to have_content "http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg"
+    expect(page).to have_content "Cats\nThey are super neat."
+    expect(page).to have_content "Rating: 5 out of 5"
+  end
 end
