@@ -2,8 +2,7 @@ require 'spec_helper'
 
 feature 'video management' do
   scenario 'users can add a new video' do
-    visit '/'
-    click_on 'All Videos'
+    visit '/videos'
     click_on 'New Video'
 
     fill_in 'video_url', :with => 'https://www.youtube.com/watch?v=yTCRwi71_ns'
@@ -49,9 +48,8 @@ feature 'video management' do
   end
 
   scenario 'user can see links for all of the videos displayed' do
-    visit '/'
+    visit '/videos'
 
-    click_on 'All Videos'
     click_on 'New Video'
 
     fill_in 'video_url', :with => 'https://www.youtube.com/watch?v=yTCRwi71_ns'
@@ -64,16 +62,14 @@ feature 'video management' do
     fill_in 'video_rating', :with => '5'
     click_on 'Create Video'
 
-    visit '/'
-    click_on 'All Videos'
+    visit '/videos'
     expect(page).to have_content 'https://www.youtube.com/watch?v=yTCRwi71_ns'
     expect(page).to have_content 'http://youtu.be/OydqR_7_DjI'
   end
 
   scenario 'user can edit a video' do
-    visit '/'
+    visit '/videos'
 
-    click_on 'All Videos'
     click_on 'New Video'
 
     fill_in 'video_url', :with => 'https://www.youtube.com/watch?v=LW863DOXqZQ'
