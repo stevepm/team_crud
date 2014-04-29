@@ -19,7 +19,9 @@
         <%= line %><br/>
       <% end %>
     </p>
+
     <a href="/pictures/<%= @picture.id %>/edit">Edit</a>
+    <%= link_to('Delete', picture_path(@picture), method: :delete) %>
   </div>
   <div class="resetColumnSet"></div>
 </div><!--end content_container-->
