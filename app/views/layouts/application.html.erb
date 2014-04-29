@@ -7,9 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-  <div id="header_container">
-    Media Manager
+<header id="header_container">
+  <div id="nav-container">
+    <div id="left-nav-links">
+      <a href="/">Media Manager</a>
+    </div>
+    <div id="right-nav-links">
+      <p><a href="/pictures">All Pictures</a> |
+      <a href="/videos">All Videos</a></p>
+    </div>
+    <div class="resetColumnSet"></div>
   </div>
 </header>
 <div id="content_container"><%= yield %></div>

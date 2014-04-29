@@ -2,6 +2,6 @@
 <%= link_to('New Picture', action: 'new') %>
 <ol>
   <% @pictures.each do |picture| %>
-    <li><a href="/pictures/<%= picture.id %>" id="show_<%= picture.id %>"><img class="thumbnail" src="<%= picture.url %>"/></a></li>
+    <li  id="picture-list"><a href="/pictures/<%= picture.id %>" id="show_<%= picture.id %>"><img class="thumbnail" src="<%= picture.url %>"/></a></li>
   <% end %>
 </ol>
