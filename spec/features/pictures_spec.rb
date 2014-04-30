@@ -94,7 +94,7 @@ feature 'picture management' do
     fill_in 'description', with: "Cats\nThey are neat."
     fill_in 'rating', with: "4"
     click_button "Create Picture"
-    click_on "Edit"
+    click_link "(Edit)"
     page.should have_css("input[value='http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg']")
     expect(page).to have_content "Cats\nThey are neat."
     page.should have_css("input[value='4']")
@@ -102,13 +102,13 @@ feature 'picture management' do
     fill_in 'url', with: ""
     fill_in 'description', with: "Cats\nThey are neat."
     fill_in 'rating', with: "4"
-    click_button "Edit"
+    click_button "Update Picture"
     expect(page).to have_content('URL cannot be blank')
 
     fill_in 'url', with: "http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg"
     fill_in 'description', with: "Cats\nThey are super neat."
     fill_in 'rating', with: "5"
-    click_button "Edit"
+    click_button "Update Picture"
 
     expect(page).to have_content "Picture successfully edited"
     expect(page).to have_content "http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg"
@@ -126,7 +126,7 @@ feature 'picture management' do
     fill_in 'rating', with: "4"
     click_button "Create Picture"
 
-    click_link 'Delete'
+    click_on 'delete_button'
 
     page.should_not have_css("img[src='http://wac.450f.edgecastcdn.net/80450F/kyssfm.com/files/2012/10/cat-4-Brit.jpg']")
   end
