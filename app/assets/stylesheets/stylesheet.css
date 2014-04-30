@@ -16,17 +16,19 @@ body {
 }
 
 #header_container,
-#nav_container,
 #content_container,
 #footer_container {
     margin: auto;
-    width: 960px;
     padding: 1em;
+    width: 960px;
+}
+
+#content_container {
+    height: 81%;
 }
 
 #left-nav-links{
     width: 48%;
-    padding-left: 0;
 }
 #left-nav-links a {
     color: white;
@@ -38,14 +40,16 @@ body {
 header {
     background-color: #336699;
     color: white;
+    width: 100%;
+    padding: 1em 0em;
 }
 
 #header_container {
-    width: 100%;
+    /*width: 100%;*/
 }
 
 #nav-container{
-    width: 800px;
+    width: 960px;
     margin: 0 auto;
     position: relative;
 }
@@ -209,9 +213,6 @@ footer {
 
 .one_half, .one_third, .two_third, .three_fourth, .one_fourth, .full_column {
     position: relative;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
     float: left;
 }
 
