@@ -15,11 +15,7 @@
     <a href=<%= @video.url %>><%= @video.url %></a> &nbsp; <a href="/videos/<%= @video.id %>/edit">(Edit)</a>
   </p>
 
-  <p>
-    <% @video.description.split("\n").each do |line| %>
-      <%= line %><br/>
-    <% end %>
-  </p>
+  <p><%= simple_format(@video.description) %></p>
   <% 5.times do %>
     <br>
   <% end %>
