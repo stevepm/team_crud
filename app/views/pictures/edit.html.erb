@@ -24,9 +24,13 @@
         <td><%= f.label :rating %></td>
         <td><%= f.text_field :rating, :id => 'rating' %></td>
       </tr>
+      <tr>
+        <td></td>
+        <td> <%= f.submit 'Update Picture', :id => 'picture-button' %> </td>
+      </tr>
     </table>
     <br/>
-    <%= f.submit 'Edit', :id => 'picture-button' %>
+
 
   <% end %>
 </div>
