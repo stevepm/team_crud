@@ -192,6 +192,9 @@ footer {
   padding-right: 100px;
   padding-top: 15px;
 }
+#url{
+  word-wrap: break-word;
+}
 
 .one_third {
   width: 300px;
