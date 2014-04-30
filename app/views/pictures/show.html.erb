@@ -11,15 +11,19 @@
   <p>Rating: <%= @picture.rating %> out of 5</p>
 </div>
 <div class="one_third" id="right_side">
-  <p><a href="<%= @picture.url %>"><%= @picture.url %></a></p>
+  <p>
+    <a href="<%= @picture.url %>"><%= @picture.url %></a> &nbsp; <a href="/pictures/<%= @picture.id %>/edit">(Edit)</a>
+  </p>
 
   <p>
     <% @picture.description.split("\n").each do |line| %>
       <%= line %><br/>
     <% end %>
   </p>
-
-  <a href="/pictures/<%= @picture.id %>/edit">Edit</a>
-  <%= link_to('Delete', picture_path(@picture), method: :delete) %>
+</div>
+<div class="resetColumnSet"></div>
+<div class="one_third" id="left_side">&nbsp;</div>
+<div class="one_third" id="right_side">
+  <%= button_to('Delete Picture', picture_path(@picture), method: :delete, :id => "delete_button") %>
 </div>
 <div class="resetColumnSet"></div>

@@ -4,13 +4,11 @@
 
   <% if @video.errors.present? %>
     <div class="errors">
-      <h1>Error(s):</h1>
-      <ul class="error-list">
-        <% @video.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+      <% @video.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+      <% end %>
     </div>
+    <br>
   <% end %>
   <table id="video_form">
     <tr>

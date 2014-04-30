@@ -19,7 +19,7 @@ body {
 #content_container,
 #footer_container {
     margin: auto;
-    padding: 1em;
+    padding: 3em;
     width: 960px;
 }
 
@@ -41,7 +41,7 @@ header {
     background-color: #336699;
     color: white;
     width: 100%;
-    padding: 1em 0em;
+    padding: 3em 0em;
 }
 
 #header_container {
@@ -99,6 +99,27 @@ footer {
     vertical-align: top;
 }
 
+#video_form input[type=submit] {
+    border: 2px solid black;
+    background-color: white;
+    -moz-box-shadow: 3px 3px 0px 0px #000;
+    -webkit-box-shadow: 3px 3px 0px 0px #000;
+    box-shadow: 3px 3px 0px 0px #000;
+}
+
+#delete_button {
+    border: 2px solid black;
+    background-color: red;
+    -moz-box-shadow: 3px 3px 0px 0px #000;
+    -webkit-box-shadow: 3px 3px 0px 0px #000;
+    box-shadow: 3px 3px 0px 0px #000;
+    color: white;
+}
+
+#video_form input[type=text], #video_form textarea {
+    border: 2px solid black;
+}
+
 .wide input[type=text], .wide textarea {
     width: 100%;
 }
@@ -142,11 +163,16 @@ footer {
     border: 2px solid black;
 }
 
+#picture-list {
+    margin: auto;
+}
+
 /*image styling*/
 
 .thumbnail {
-    max-width: 280px;
-    border: 2px dashed #000000;
+    height: 280px;
+    margin: 1.5em 1em 0em 0em;
+    border: 2px solid #000000;
 }
 
 #picture-list {
