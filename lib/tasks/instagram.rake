@@ -16,7 +16,9 @@ namespace :instagram do
         description = media_item.caption.text
       end
       rating = 0
-      Picture.create!(:url => picture, :description => description, :rating => rating)
+      unless Picture.exists?(:url => picture)
+        Picture.create!(:url => picture, :description => description, :rating => rating)
+      end
     end
   end
 end
