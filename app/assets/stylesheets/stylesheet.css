@@ -176,6 +176,33 @@ footer {
   padding-top: 12px;
 }
 
+#instagram {
+    margin-top: 10px;
+    position: relative;
+}
+
+#instagram_user {
+    font-weight: bold;
+}
+
+#instagram_image {
+    display: inline-block;
+    max-width: 150px;
+
+}
+
+#instagram_info {
+    display: inline-block;
+    max-width: 200px;
+    margin: auto;
+    vertical-align: top;
+    padding-left: 5px;
+}
+
+#instagram_info p {
+    min-height: 60px;
+}
+
 /* ----- =columns ----- */
 
 .one_half {

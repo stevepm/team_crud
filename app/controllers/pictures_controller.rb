@@ -51,7 +51,8 @@ class PicturesController < ApplicationController
   end
 
   def instagram
-    @client = Instagram.client
+    client = Instagram.client
+    @media_items = client.media_search("40.0176335", "-105.2819911")
   end
 
   private
