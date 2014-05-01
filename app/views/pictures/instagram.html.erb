@@ -25,7 +25,8 @@
         <span class='bold'><%= pluralize(media_item[:likes][:count], 'like') %></span>
       </p>
       <a href='<%= media_item.link %>'>View</a><br/>
-      <span class="bold"><%= media_item.user.username %></span>
+      <span class="bold"><%= media_item.user.username %></span><br/>
+      <%= link_to "Open in App", "instagram://media?id=#{media_item.id}", class: 'app-link' %>
     </div>
   </div>
   <% counter += 1 %>
@@ -34,3 +35,20 @@
   <% end %>
 <% end %>
 <div class="resetColumnSet"></div>
+
+
+<script type="text/javascript">
+  $(function () {
+    $(".app-link").click(function () {
+      var timeout;
+
+      function try_to_open_app() {
+        timeout = setTimeout(function () {
+          window.location='http://itunes.com/';
+        }, 300);
+      }
+
+      try_to_open_app();
+    });
+  })
+</script>
