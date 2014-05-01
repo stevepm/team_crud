@@ -1,3 +1,28 @@
-<% for media_item in @instagrams %>
-  <img src="<%= media_item.images.thumbnail.url %>">
+<% counter = 0 %>
+<% @media_items.each do |media_item| %>
+  <div id="instagram" class="one_half">
+    <div id="instagram_image">
+      <img src="<%= media_item.images.thumbnail.url %>">
+    </div>
+    <div id="instagram_info">
+      <p>
+        <% if media_item.caption %>
+          <% if media_item.caption.text.length > 50 %>
+            <%= (media_item.caption.text)[0..50] + "..." %>
+          <% else %>
+            <%= media_item.caption.text %>
+          <% end %>
+        <% end %><br/>
+        <span class='bold'><%= pluralize(media_item[:likes][:count], 'like') %></span>
+      </p>
+      <a href='<%= media_item.link %>'>View</a><br />
+      <span class="bold"><%= media_item.user.username %></span>
+    </div>
+  </div>
+  <% counter += 1 %>
+  <% if counter.even? %>
+    <div class="resetColumnSet"></div>
+  <% end %>
 <% end %>
+<div class="resetColumnSet"></div>
+>>>>>>> 1c49ff5332b599d8445bd1162d4c165b1086b25e
