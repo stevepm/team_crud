@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/pictures/instagram', to: 'pictures#instagram'
 
+  post '/pictures/instagram', to: 'pictures#instagram_location'
+
   resources :pictures
 
   resources :videos

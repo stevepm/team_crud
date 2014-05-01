@@ -96,12 +96,19 @@ footer {
   vertical-align: top;
 }
 
-#video_form input[type=submit] {
+#video_form input[type=submit],
+#location_form input[type=submit] {
   border: 2px solid black;
   background-color: white;
   -moz-box-shadow: 3px 3px 0px 0px #000;
   -webkit-box-shadow: 3px 3px 0px 0px #000;
   box-shadow: 3px 3px 0px 0px #000;
+}
+
+#location_form input[type=text]{
+    border: 2px solid black;
+    width: 100px;
+    margin-bottom: 1em;
 }
 
 #delete_button {
