@@ -11,6 +11,11 @@ Setup Instructions
 1. Run Specs `rake spec`
 1. Run Local Server `rails s`
 
+Admins
+======
+* run `rake instagram:import` to import pictures from instagram
+
+
 URLS
 ====
 *     Staging: [http://floral-violet-stg.herokuapp.com](http://floral-violet-stg.herokuapp.com)
