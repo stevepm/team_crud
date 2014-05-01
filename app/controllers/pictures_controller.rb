@@ -52,7 +52,13 @@ class PicturesController < ApplicationController
 
   def instagram
     client = Instagram.client
-    @media_items = client.media_search("40.0176335", "-105.2819911")
+    @latitude = (params[:latitude] || '40.0176335')
+    @longitude = (params[:longitude] || '-105.2819911')
+    @media_items = client.media_search(@latitude, @longitude)
+  end
+
+  def instagram_location
+    redirect_to "/pictures/instagram?latitude=#{params[:latitude]}&longitude=#{params[:longitude]}"
   end
 
   private

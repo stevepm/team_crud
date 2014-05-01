@@ -1,3 +1,12 @@
+<h1>Instagram Location Stream</h1>
+<div id="location_form">
+<%= form_tag("/pictures/instagram", method: "post") do %>
+  <%= text_field_tag(:latitude, @latitude, :placeholder => 'latitude') %>
+  <%= text_field_tag(:longitude, @longitude, :placeholder => 'longitude') %>
+  <%= submit_tag("Update Location") %>
+<% end %>
+</div>
+
 <% counter = 0 %>
 <% @media_items.each do |media_item| %>
   <div id="instagram" class="one_half">
@@ -15,7 +24,7 @@
         <% end %><br/>
         <span class='bold'><%= pluralize(media_item[:likes][:count], 'like') %></span>
       </p>
-      <a href='<%= media_item.link %>'>View</a><br />
+      <a href='<%= media_item.link %>'>View</a><br/>
       <span class="bold"><%= media_item.user.username %></span>
     </div>
   </div>
