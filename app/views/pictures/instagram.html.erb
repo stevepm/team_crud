@@ -1,4 +1,4 @@
-<% count = 0 %>
+<% counter = 0 %>
 <% @media_items.each do |media_item| %>
   <div id="instagram" class="one_half">
     <div id="instagram_image">
@@ -12,14 +12,15 @@
           <% else %>
             <%= media_item.caption.text %>
           <% end %>
-        <% end %>
+        <% end %><br/>
+        <span class='bold'><%= pluralize(media_item[:likes][:count], 'like') %></span>
       </p>
       <a href='<%= media_item.link %>'>View</a><br />
-      <span id="instagram_user"><%= media_item.user.username %></span>
+      <span class="bold"><%= media_item.user.username %></span>
     </div>
   </div>
-  <% count += 1 %>
-  <% if count.even? %>
+  <% counter += 1 %>
+  <% if counter.even? %>
     <div class="resetColumnSet"></div>
   <% end %>
 <% end %>
