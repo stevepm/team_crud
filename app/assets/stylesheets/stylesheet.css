@@ -107,7 +107,7 @@ footer {
 
 #location_form input[type=text]{
     border: 2px solid black;
-    width: 80px;
+    width: 100px;
     margin-bottom: 1em;
 }
 
