@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  get '/pictures/instagram', to: 'pictures#instagram'
+
   resources :pictures
 
   resources :videos

@@ -1,5 +1,6 @@
 <h1>Pictures</h1>
-<%= link_to('New Picture', action: 'new') %>
+<%= link_to('New Picture', action: 'new') %><br />
+<%= link_to("View Instagram Photos", action: 'instagram') %>
 <div id="picture-list">
   <% @pictures.each do |picture| %>
     <a href="/pictures/<%= picture.id %>" id="show_<%= picture.id %>"><img class="thumbnail" src="<%= picture.url %>"/></a>

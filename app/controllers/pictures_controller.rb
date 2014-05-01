@@ -1,4 +1,11 @@
+require "instagram"
+
 class PicturesController < ApplicationController
+  Instagram.configure do |config|
+    config.client_id = ENV["INSTAGRAM_CLIENT_ID"]
+    config.client_secret = ENV["INSTAGRAM_CLIENT_SECRET"]
+  end
+
   def index
     @pictures = Picture.all
   end
@@ -42,6 +49,11 @@ class PicturesController < ApplicationController
     @picture.destroy
     redirect_to pictures_path
   end
+
+  def instagram
+    @client = Instagram.client
+  end
+
   private
 
   def allowed_parameters

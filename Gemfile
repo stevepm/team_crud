@@ -24,3 +24,4 @@ group :test do
 end
 
 gem 'rails_12factor', '~> 0.0.2'
+gem 'instagram', '~> 1.0.0'
