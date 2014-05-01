@@ -13,6 +13,6 @@ Setup Instructions
 
 URLS
 ====
-    Staging: http://floral-violet-stg.herokuapp.com
-    Production: http://floral-violet-prod.herokuapp.com
-    Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1069174
+    Staging: [http://floral-violet-stg.herokuapp.com](http://floral-violet-stg.herokuapp.com)
+    Production: [http://floral-violet-prod.herokuapp.com](http://floral-violet-prod.herokuapp.com)
+    Pivotal Tracker: [https://www.pivotaltracker.com/n/projects/1069174](https://www.pivotaltracker.com/n/projects/1069174)
